@@ -15,7 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        // Crear instancias de los controladores para las pestañas
         let listingVC = UINavigationController(rootViewController: ListViewController())
         listingVC.tabBarItem = UITabBarItem(title: "Propiedades", image: UIImage(systemName: "list.bullet"), tag: 0)
         
@@ -25,7 +24,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let settingsVC = UINavigationController(rootViewController: SettingsViewController())
         settingsVC.tabBarItem = UITabBarItem(title: "Ajustes", image: UIImage(systemName: "gear"), tag: 2)
         
-        // Crear el TabBarController
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [listingVC, favoritesVC, settingsVC]
         
@@ -34,15 +32,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .verdeIdealista
 
-        // Estilo para pestañas seleccionadas
         appearance.stackedLayoutAppearance.selected.iconColor = .moradoIdealista
         appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.moradoIdealista]
 
-        // Estilo para pestañas no seleccionadas
         appearance.stackedLayoutAppearance.normal.iconColor = .gray
         appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.gray]
 
-        // Asignar el estilo al TabBarController
         tabBarController.tabBar.standardAppearance = appearance
         tabBarController.tabBar.scrollEdgeAppearance = appearance
         
