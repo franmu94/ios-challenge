@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         favoritesVC.tabBarItem = UITabBarItem(title: "Favoritos", image: UIImage(systemName: "heart.fill"), tag: 1)
         
         let settingsVC = UINavigationController(rootViewController: SettingsViewController())
-        settingsVC.tabBarItem = UITabBarItem(title: "Ajustes", image: UIImage(systemName: "gearshape"), tag: 2)
+        settingsVC.tabBarItem = UITabBarItem(title: "Ajustes", image: UIImage(systemName: "gear"), tag: 2)
         
         // Crear el TabBarController
         let tabBarController = UITabBarController()
@@ -32,11 +32,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .verdeIdelaista
+        appearance.backgroundColor = .verdeIdealista
 
         // Estilo para pestañas seleccionadas
-        appearance.stackedLayoutAppearance.selected.iconColor = .moradoIdelaista
-        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.moradoIdelaista]
+        appearance.stackedLayoutAppearance.selected.iconColor = .moradoIdealista
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.moradoIdealista]
 
         // Estilo para pestañas no seleccionadas
         appearance.stackedLayoutAppearance.normal.iconColor = .gray

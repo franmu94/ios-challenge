@@ -31,6 +31,10 @@ struct Property: Codable, Identifiable {
     let description: String
     let multimedia: Multimedia
     
+    var hasElevator: Bool {
+        description.lowercased().contains("ascensor")
+    }
+    
     let hasAirConditioning: Bool
     let hasBoxRoom: Bool
     let hasSwimmingPool: Bool
@@ -41,4 +45,5 @@ struct Property: Codable, Identifiable {
     let isParkingSpaceIncludedInPrice: Bool
     
     var isFavorite: Bool = false
+    var favoriteDate: Date? = nil
 }
